@@ -1,19 +1,27 @@
 @use 'src/assets/styles' as *;
 
 .card {
+  position: relative;
   width: 100%;
   min-height: rem(100);
   background-color: $color-white;
 
   border-radius: rem(5);
-  box-shadow: 0 12px 12px -5px rgb(0, 0, 0, 0.1);
+  box-shadow: 0 12px 12px -5px rgba($color-cyan-400, 0.3);
 
-  padding: 2rem;
-  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: rem(56);
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @include desktop-sm {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    padding: 2rem;
+  }
 
   &--active {
     border-left: rem(6) solid $color-cyan-400;
@@ -23,11 +31,36 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    margin-top: 1rem;
+
+    @include desktop-sm {
+      margin-top: 0;
+    }
   }
 
   &__image {
-    max-width: rem(80);
-    max-height: rem(80);
+    &-wrapper {
+      position: absolute;
+      top: 0;
+
+      width: rem(50);
+      height: rem(50);
+
+      @include desktop-sm {
+        position: initial;
+
+        width: rem(80);
+        height: rem(80);
+      }
+    }
+
+    width: 100%;
+    transform: translateY(-50%);
+
+    @include desktop-sm {
+      transform: none;
+    }
   }
 
   &__description {
@@ -84,7 +117,18 @@
   &__filter {
     &-wrapper {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
+
+      border-top: 1px solid rgba($color-cyan-800, 0.6);
+      margin-top: 1rem;
+      padding-top: 1rem;
+
+      @include desktop-sm {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
     }
 
     border: none;

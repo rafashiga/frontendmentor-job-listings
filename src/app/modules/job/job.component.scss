@@ -1,6 +1,6 @@
 @use 'src/assets/styles' as *;
 
-.bg-header {
+.header {
   background-image: url('../../../assets/images/bg-header-mobile.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -8,8 +8,84 @@
   width: 100%;
   height: rem(120);
 
+  position: relative;
+
   @include desktop-sm {
     background-image: url('../../../assets/images/bg-header-desktop.svg');
+  }
+}
+
+.filter {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+
+  width: 80%;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: rem(18) rem(24);
+  background: $color-white;
+
+  border-radius: rem(5);
+  box-shadow: 0 12px 12px -5px rgba($color-cyan-400, 0.3);
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__tag {
+    background: $color-cyan-200;
+    color: $color-cyan-400;
+    font-weight: 700;
+    font-size: rem(12);
+
+    border-top-left-radius: rem(3);
+    border-bottom-left-radius: rem(3);
+
+    display: flex;
+    align-items: center;
+
+    span {
+      padding: rem(5);
+    }
+
+    button {
+      border: none;
+      color: #fff;
+      font-size: 0;
+      padding: rem(5);
+
+      background: $color-cyan-400;
+      border-top-right-radius: rem(3);
+      border-bottom-right-radius: rem(3);
+
+      transition: all 0.2s;
+
+      img {
+        width: rem(12);
+      }
+
+      &:hover {
+        background: $color-cyan-900;
+      }
+    }
+  }
+
+  &__clear {
+    color: $color-cyan-400;
+    font-weight: 700;
+    text-decoration: underline;
+
+    border: none;
+    background: none;
   }
 }
 
@@ -17,5 +93,5 @@
   width: 80%;
   margin: 0 auto;
 
-  padding: rem(64) 0;
+  padding: rem(80) 0;
 }

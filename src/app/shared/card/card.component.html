@@ -1,10 +1,12 @@
 <div class="card" [class.card--active]="job.featured">
   <div class="card__info">
-    <img
-      [src]="'../../../assets/images/' + job.logo"
-      [alt]="job.company"
-      class="card__image"
-    />
+    <div class="card__image-wrapper">
+      <img
+        [src]="'../../../assets/images/' + job.logo"
+        [alt]="job.company"
+        class="card__image"
+      />
+    </div>
     <div class="card__description">
       <div class="card__company-wrapper">
         <p class="card__company">{{ job.company }}</p>
@@ -24,6 +26,9 @@
   <div class="card__filter-wrapper">
     <button type="button" class="card__filter">
       {{ job.role }}
+    </button>
+    <button type="button" class="card__filter">
+      {{ job.level }}
     </button>
     <button
       *ngFor="let language of job.languages"
