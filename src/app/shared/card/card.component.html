@@ -24,20 +24,26 @@
     </div>
   </div>
   <div class="card__filter-wrapper">
-    <button type="button" class="card__filter">
+    <button type="button" class="card__filter" (click)="addFilter(job.role)">
       {{ job.role }}
     </button>
-    <button type="button" class="card__filter">
+    <button type="button" class="card__filter" (click)="addFilter(job.level)">
       {{ job.level }}
     </button>
     <button
       *ngFor="let language of job.languages"
       type="button"
       class="card__filter"
+      (click)="addFilter(language)"
     >
       {{ language }}
     </button>
-    <button *ngFor="let tool of job.tools" type="button" class="card__filter">
+    <button
+      *ngFor="let tool of job.tools"
+      type="button"
+      class="card__filter"
+      (click)="addFilter(tool)"
+    >
       {{ tool }}
     </button>
   </div>

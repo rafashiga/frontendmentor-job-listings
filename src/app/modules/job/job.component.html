@@ -1,21 +1,27 @@
 <header class="header">
-  <div class="filter">
+  <div class="filter" *ngIf="filters.length">
     <div class="filter__tags">
-      <div class="filter__tag">
-        <span>Frontend</span>
-        <button type="button">
+      <div class="filter__tag" *ngFor="let filter of filters">
+        <span>{{ filter }}</span>
+        <button
+          type="button"
+          aria-label="remove filter"
+          (click)="removeFilter(filter)"
+        >
           <img src="../../../assets/images/icon-remove.svg" alt="remove" />
         </button>
       </div>
     </div>
-    <button type="button" class="filter__clear">Clear</button>
+    <button type="button" class="filter__clear" (click)="clearFilter()">
+      Clear
+    </button>
   </div>
 </header>
 
 <main>
   <section class="job">
     <ng-container *ngFor="let job of jobs">
-      <app-card [job]="job"></app-card>
+      <app-card [job]="job" (filterClick)="addFilter($event)"></app-card>
     </ng-container>
   </section>
 </main>

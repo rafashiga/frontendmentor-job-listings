@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Job } from '@/shared/models/job';
 
 @Component({
@@ -6,10 +6,11 @@ import { Job } from '@/shared/models/job';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() job: Job = {} as Job;
+  @Output() filterClick = new EventEmitter<string>();
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  addFilter(filter: string): void {
+    this.filterClick.emit(filter);
+  }
 }
