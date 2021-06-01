@@ -1,0 +1,16 @@
+@use 'src/assets/styles' as *;
+
+footer {
+  text-align: center;
+  padding-bottom: 1.5rem;
+
+  font-size: rem(11);
+
+  a {
+    color: hsl(228, 45%, 44%);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
