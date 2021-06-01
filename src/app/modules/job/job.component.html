@@ -1,0 +1,11 @@
+<header>
+  <div class="bg-header"></div>
+</header>
+
+<main>
+  <section class="job">
+    <ng-container *ngFor="let job of jobs">
+      <app-card [job]="job"></app-card>
+    </ng-container>
+  </section>
+</main>

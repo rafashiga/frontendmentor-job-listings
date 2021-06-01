@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'assets/styles' as *;
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Spartan', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+body {
+  background-color: $color-cyan-100;
+}
+
+a,
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+@use 'src/assets/styles' as *;
+
+.bg-header {
+  background-image: url('../../../assets/images/bg-header-mobile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $color-cyan-400;
+  width: 100%;
+  height: rem(120);
+
+  @include desktop-sm {
+    background-image: url('../../../assets/images/bg-header-desktop.svg');
+  }
+}
+
+.job {
+  width: 80%;
+  margin: 0 auto;
+
+  padding: rem(64) 0;
+}

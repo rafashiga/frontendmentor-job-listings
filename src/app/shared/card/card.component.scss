@@ -1,0 +1,106 @@
+@use 'src/assets/styles' as *;
+
+.card {
+  width: 100%;
+  min-height: rem(100);
+  background-color: $color-white;
+
+  border-radius: rem(5);
+  box-shadow: 0 12px 12px -5px rgb(0, 0, 0, 0.1);
+
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--active {
+    border-left: rem(6) solid $color-cyan-400;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__image {
+    max-width: rem(80);
+    max-height: rem(80);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__company {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: rem(12);
+    }
+
+    font-weight: 700;
+    color: $color-cyan-400;
+  }
+
+  &__position {
+    font-weight: 700;
+    color: $color-cyan-900;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $color-cyan-400;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    gap: 1rem;
+
+    font-size: rem(12);
+    color: $color-cyan-800;
+  }
+
+  &__tag {
+    color: $color-white;
+    font-size: rem(9);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: rem(8) rem(7) rem(5) rem(7);
+    border-radius: rem(16);
+    background: $color-cyan-400;
+
+    &--dark {
+      background: #000;
+    }
+  }
+
+  &__filter {
+    &-wrapper {
+      display: flex;
+      gap: 1rem;
+    }
+
+    border: none;
+    border-radius: rem(5);
+    padding: rem(7);
+
+    font-size: rem(12);
+    font-weight: 700;
+    color: $color-cyan-400;
+
+    background-color: $color-cyan-200;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $color-cyan-200;
+      background-color: $color-cyan-400;
+    }
+  }
+}
